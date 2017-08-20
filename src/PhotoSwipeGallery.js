@@ -47,11 +47,14 @@ class PhotoSwipeGallery extends React.Component {
   showPhotoSwipe = itemIndex => (e) => {
     e.preventDefault();
     const getThumbBoundsFn = ((index) => {
-      const thumbnail = this.thumbnails[index];
-      const img = thumbnail.getElementsByTagName('img')[0];
-      const pageYScroll = window.pageYOffset || document.documentElement.scrollTop;
-      const rect = img.getBoundingClientRect();
-      return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
+      if (this.thumbnails[index]) {
+        const thumbnail = this.thumbnails[index];
+        const img = thumbnail.getElementsByTagName('img')[0];
+        const pageYScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const rect = img.getBoundingClientRect();
+        return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
+      }
+      return null;
     });
     const { options } = this.state;
     options.index = itemIndex;
