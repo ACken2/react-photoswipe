@@ -6,7 +6,8 @@
   "scripts": {
     "start": "NODE_ENV=development babel-node example/webpack.server.js --hot",
     "lint": "NODE_ENV=development eslint .",
-    "build": "NODE_ENV=production gulp build"
+    "build": "NODE_ENV=production gulp build",
+    "buildWindow": "SET NODE_ENV=production & gulp build"
   },
   "keywords": [
     "react-component",

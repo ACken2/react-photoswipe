@@ -18,7 +18,8 @@
     "react/forbid-prop-types": "off",
     "react/no-array-index-key": "off",
     "jsx-a11y/no-static-element-interactions": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "linebreak-style": ["error", "windows"]
   },
   "globals": {
     "jQuery": false,
